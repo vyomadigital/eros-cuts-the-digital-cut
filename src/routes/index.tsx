@@ -33,63 +33,51 @@ function HomePage() {
 
 function Hero() {
   return (
-    <section className="relative -mt-20 h-[100svh] min-h-[640px] w-full overflow-hidden grain">
+    <section className="relative -mt-20 h-[88svh] min-h-[600px] w-full overflow-hidden">
       <img
         src={heroImg}
         alt="Premium barbershop session at EROS CUTS"
-        className="absolute inset-0 h-full w-full object-cover scale-105"
+        className="absolute inset-0 h-full w-full object-cover"
         width={1920}
         height={1280}
       />
       <div className="absolute inset-0 bg-gradient-hero" />
-      <div className="absolute inset-0 bg-gradient-to-r from-onyx/80 via-transparent to-transparent" />
 
-      <div className="relative z-10 mx-auto flex h-full max-w-7xl flex-col justify-end px-6 md:px-8 pb-20 md:pb-28">
-        <div className="flex items-center gap-3 mb-6 animate-fade-up">
-          <span className="h-px w-10 bg-gold" />
-          <span className="text-[0.7rem] tracking-[0.4em] uppercase text-gold">
-            Est. 2017 · Kathmandu
-          </span>
+      <div className="relative z-10 mx-auto flex h-full max-w-7xl flex-col justify-end px-6 md:px-8 pb-20 md:pb-24">
+        <div className="text-[0.7rem] tracking-[0.3em] uppercase text-gold/90 mb-5 animate-fade-up">
+          Est. 2017 · Kathmandu
         </div>
-        <h1 className="font-display text-5xl sm:text-6xl md:text-7xl lg:text-[5.5rem] leading-[0.95] text-cream max-w-4xl animate-fade-up delay-100">
-          Where every cut is <em className="text-gradient-gold not-italic">crafted</em>,
-          <br />never rushed.
+        <h1 className="font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl leading-[1.02] text-cream max-w-3xl animate-fade-up delay-100 font-normal">
+          Where every cut is crafted,<br className="hidden sm:block" /> never rushed.
         </h1>
-        <p className="mt-6 max-w-xl text-base md:text-lg text-cream/75 leading-relaxed animate-fade-up delay-200">
-          Kathmandu's premier grooming studio. Master barbers, editorial interiors,
-          and a service ritual designed to make routine feel rare.
+        <p className="mt-5 max-w-lg text-base text-cream/70 leading-relaxed animate-fade-up delay-200">
+          Kathmandu's premier grooming studio. Master barbers and a service ritual
+          designed to make routine feel rare.
         </p>
-        <div className="mt-9 flex flex-col sm:flex-row gap-3 animate-fade-up delay-300">
-          <Button asChild variant="gold" size="xl">
+        <div className="mt-8 flex flex-col sm:flex-row gap-3 animate-fade-up delay-300">
+          <Button asChild variant="gold" size="lg">
             <Link to="/booking">
-              Book Your Session <ArrowRight size={16} />
+              Book a session <ArrowRight size={16} />
             </Link>
           </Button>
-          <Button asChild variant="outlineGold" size="xl">
-            <Link to="/services">View Services</Link>
+          <Button asChild variant="outlineGold" size="lg">
+            <Link to="/services">View services</Link>
           </Button>
         </div>
 
-        <div className="mt-12 flex flex-wrap items-center gap-6 text-sm text-cream/70 animate-fade-up delay-500">
+        <div className="mt-10 flex flex-wrap items-center gap-5 text-sm text-cream/60 animate-fade-up delay-500">
           <div className="flex items-center gap-2">
             <div className="flex">
               {[...Array(5)].map((_, i) => (
-                <Star key={i} size={14} className="fill-gold text-gold" />
+                <Star key={i} size={12} className="fill-gold text-gold" />
               ))}
             </div>
-            <span><span className="text-cream font-medium">4.9</span> · 662 Google reviews</span>
+            <span><span className="text-cream">4.9</span> · 662 reviews</span>
           </div>
-          <span className="hidden sm:inline h-4 w-px bg-border" />
-          <span className="flex items-center gap-2">
-            <MapPin size={14} className="text-gold" /> Durbar Marg, Kathmandu
+          <span className="hidden sm:inline h-3 w-px bg-border" />
+          <span className="flex items-center gap-1.5">
+            <MapPin size={12} className="text-gold" /> Durbar Marg, Kathmandu
           </span>
-        </div>
-      </div>
-
-      <div className="absolute bottom-6 left-1/2 -translate-x-1/2 z-10 hidden md:block animate-fade-in delay-700">
-        <div className="flex flex-col items-center gap-2 text-[0.65rem] tracking-[0.3em] uppercase text-cream/50">
-          <span>Scroll</span>
-          <span className="h-10 w-px bg-gradient-to-b from-gold/60 to-transparent" />
         </div>
       </div>
     </section>
@@ -98,34 +86,18 @@ function Hero() {
 
 function TrustBar() {
   return (
-    <section className="border-y border-border bg-onyx/60 backdrop-blur">
-      <div className="mx-auto max-w-7xl px-6 md:px-8 py-10 grid grid-cols-2 md:grid-cols-4 gap-8">
+    <section className="border-y border-border">
+      <div className="mx-auto max-w-7xl px-6 md:px-8 py-12 grid grid-cols-2 md:grid-cols-4 gap-8">
         {stats.map((s) => (
-          <div key={s.label} className="text-center md:text-left">
-            <div className="font-condensed text-4xl md:text-5xl text-gradient-gold">
+          <div key={s.label}>
+            <div className="font-condensed text-3xl md:text-4xl text-cream">
               {s.value}{s.suffix ?? ""}
             </div>
-            <div className="mt-1 text-[0.7rem] uppercase tracking-[0.25em] text-muted-foreground">
+            <div className="mt-1.5 text-[0.7rem] uppercase tracking-[0.22em] text-muted-foreground">
               {s.label}
             </div>
           </div>
         ))}
-      </div>
-      <div className="overflow-hidden border-t border-border py-3">
-        <div className="flex gap-12 animate-ticker whitespace-nowrap text-xs uppercase tracking-[0.35em] text-muted-foreground">
-          {[...Array(2)].map((_, k) => (
-            <div key={k} className="flex gap-12">
-              <span>★ Featured in Kathmandu Post</span>
-              <span>· 4.9 on Google ·</span>
-              <span>Walk-ins by request only</span>
-              <span>· Master Barbers ·</span>
-              <span>Hot-towel service</span>
-              <span>· Since 2017 ·</span>
-              <span>662 verified reviews</span>
-              <span>· Premium grooming ·</span>
-            </div>
-          ))}
-        </div>
       </div>
     </section>
   );
