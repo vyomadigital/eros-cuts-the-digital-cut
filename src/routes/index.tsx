@@ -295,40 +295,37 @@ function Testimonials() {
 function BookingCTA() {
   return (
     <section className="py-24 md:py-32 px-6 md:px-8">
-      <div className="mx-auto max-w-5xl relative overflow-hidden rounded-2xl border border-gold/30 bg-gradient-to-br from-card to-onyx p-10 md:p-16 text-center grain">
-        <div className="absolute inset-0 bg-radial-gold opacity-50 pointer-events-none" />
-        <div className="relative">
-          <div className="text-[0.7rem] tracking-[0.35em] uppercase text-gold mb-5">
-            Today's Availability
-          </div>
-          <h2 className="font-display text-4xl md:text-5xl text-cream leading-tight">
-            Only 8 chairs left for today.
-          </h2>
-          <p className="mt-4 text-muted-foreground max-w-xl mx-auto">
-            Premium slots fill up by noon. Lock yours in under 30 seconds.
-          </p>
-          <div className="mt-8 flex flex-wrap justify-center gap-2">
-            {todaysSlots.map((slot, i) => (
-              <Link
-                to="/booking"
-                key={slot}
-                className={`px-4 py-2 rounded-full text-sm border transition-all ${
-                  i < 3
-                    ? "border-border text-muted-foreground line-through"
-                    : "border-gold/40 text-cream hover:bg-gold hover:text-gold-foreground"
-                }`}
-              >
-                {slot}
-              </Link>
-            ))}
-          </div>
-          <div className="mt-10">
-            <Button asChild variant="gold" size="xl">
-              <Link to="/booking">
-                Reserve Your Chair <ArrowRight size={16} />
-              </Link>
-            </Button>
-          </div>
+      <div className="mx-auto max-w-4xl rounded-xl border border-border bg-card p-10 md:p-14 text-center">
+        <div className="text-[0.7rem] tracking-[0.3em] uppercase text-gold mb-5">
+          Today's Availability
+        </div>
+        <h2 className="font-display text-3xl md:text-4xl text-cream leading-tight">
+          A few chairs still open today.
+        </h2>
+        <p className="mt-4 text-muted-foreground max-w-lg mx-auto text-sm">
+          Premium slots fill up quickly. Reserve in under 30 seconds.
+        </p>
+        <div className="mt-8 flex flex-wrap justify-center gap-2">
+          {todaysSlots.map((slot, i) => (
+            <Link
+              to="/booking"
+              key={slot}
+              className={`px-4 py-2 rounded-md text-sm border transition-colors ${
+                i < 3
+                  ? "border-border/60 text-muted-foreground/50 line-through"
+                  : "border-border text-cream hover:border-gold/60 hover:text-gold"
+              }`}
+            >
+              {slot}
+            </Link>
+          ))}
+        </div>
+        <div className="mt-10">
+          <Button asChild variant="gold" size="lg">
+            <Link to="/booking">
+              Reserve your chair <ArrowRight size={16} />
+            </Link>
+          </Button>
         </div>
       </div>
     </section>
