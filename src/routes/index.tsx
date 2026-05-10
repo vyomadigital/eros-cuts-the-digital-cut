@@ -1,7 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import heroImg from "@/assets/hero.jpg";
 import interior from "@/assets/interior.jpg";
-import tools from "@/assets/tools.jpg";
+
 import { PageShell, SectionHeader } from "@/components/PageShell";
 import { Button } from "@/components/ui/button";
 import { services, gallery, testimonials, stats, todaysSlots } from "@/lib/mockData";
