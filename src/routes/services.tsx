@@ -56,7 +56,7 @@ function ServicesPage() {
                 <div className="mt-7 flex justify-between items-center pt-5 border-t border-border">
                   <span className="text-xs text-muted-foreground">Includes 5% local tax</span>
                   <Button asChild variant="gold">
-                    <Link to="/booking" search={{ service: s.id } as never}>
+                    <Link to="/booking">
                       Book this <ArrowRight size={14} />
                     </Link>
                   </Button>
