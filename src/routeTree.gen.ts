@@ -11,7 +11,9 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as ServicesRouteImport } from './routes/services'
 import { Route as GalleryRouteImport } from './routes/gallery'
+import { Route as DashboardRouteImport } from './routes/dashboard'
 import { Route as ContactRouteImport } from './routes/contact'
+import { Route as BookingRouteImport } from './routes/booking'
 import { Route as AboutRouteImport } from './routes/about'
 import { Route as IndexRouteImport } from './routes/index'
 
@@ -25,9 +27,19 @@ const GalleryRoute = GalleryRouteImport.update({
   path: '/gallery',
   getParentRoute: () => rootRouteImport,
 } as any)
+const DashboardRoute = DashboardRouteImport.update({
+  id: '/dashboard',
+  path: '/dashboard',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ContactRoute = ContactRouteImport.update({
   id: '/contact',
   path: '/contact',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const BookingRoute = BookingRouteImport.update({
+  id: '/booking',
+  path: '/booking',
   getParentRoute: () => rootRouteImport,
 } as any)
 const AboutRoute = AboutRouteImport.update({
@@ -44,14 +56,18 @@ const IndexRoute = IndexRouteImport.update({
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/booking': typeof BookingRoute
   '/contact': typeof ContactRoute
+  '/dashboard': typeof DashboardRoute
   '/gallery': typeof GalleryRoute
   '/services': typeof ServicesRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/booking': typeof BookingRoute
   '/contact': typeof ContactRoute
+  '/dashboard': typeof DashboardRoute
   '/gallery': typeof GalleryRoute
   '/services': typeof ServicesRoute
 }
@@ -59,22 +75,48 @@ export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/booking': typeof BookingRoute
   '/contact': typeof ContactRoute
+  '/dashboard': typeof DashboardRoute
   '/gallery': typeof GalleryRoute
   '/services': typeof ServicesRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/about' | '/contact' | '/gallery' | '/services'
+  fullPaths:
+    | '/'
+    | '/about'
+    | '/booking'
+    | '/contact'
+    | '/dashboard'
+    | '/gallery'
+    | '/services'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/about' | '/contact' | '/gallery' | '/services'
-  id: '__root__' | '/' | '/about' | '/contact' | '/gallery' | '/services'
+  to:
+    | '/'
+    | '/about'
+    | '/booking'
+    | '/contact'
+    | '/dashboard'
+    | '/gallery'
+    | '/services'
+  id:
+    | '__root__'
+    | '/'
+    | '/about'
+    | '/booking'
+    | '/contact'
+    | '/dashboard'
+    | '/gallery'
+    | '/services'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AboutRoute: typeof AboutRoute
+  BookingRoute: typeof BookingRoute
   ContactRoute: typeof ContactRoute
+  DashboardRoute: typeof DashboardRoute
   GalleryRoute: typeof GalleryRoute
   ServicesRoute: typeof ServicesRoute
 }
@@ -95,11 +137,25 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof GalleryRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/dashboard': {
+      id: '/dashboard'
+      path: '/dashboard'
+      fullPath: '/dashboard'
+      preLoaderRoute: typeof DashboardRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/contact': {
       id: '/contact'
       path: '/contact'
       fullPath: '/contact'
       preLoaderRoute: typeof ContactRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/booking': {
+      id: '/booking'
+      path: '/booking'
+      fullPath: '/booking'
+      preLoaderRoute: typeof BookingRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/about': {
@@ -122,7 +178,9 @@ declare module '@tanstack/react-router' {
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AboutRoute: AboutRoute,
+  BookingRoute: BookingRoute,
   ContactRoute: ContactRoute,
+  DashboardRoute: DashboardRoute,
   GalleryRoute: GalleryRoute,
   ServicesRoute: ServicesRoute,
 }
