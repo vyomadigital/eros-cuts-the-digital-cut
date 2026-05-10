@@ -33,20 +33,22 @@ export function FloatingWidgets() {
     <>
       {/* WhatsApp */}
       <a
-        href="#"
+        href="https://wa.me/9779800000000"
+        target="_blank"
+        rel="noreferrer"
         aria-label="WhatsApp"
-        className="fixed bottom-6 right-6 z-40 grid h-14 w-14 place-items-center rounded-full bg-[#25D366] text-black shadow-luxury hover:scale-105 transition-transform animate-pulse-gold"
+        className="fixed bottom-6 right-6 z-40 grid h-12 w-12 place-items-center rounded-full bg-[#25D366] text-black shadow-luxury hover:scale-105 transition-transform"
       >
-        <MessageCircle size={24} />
+        <MessageCircle size={20} />
       </a>
 
       {/* AI Concierge */}
       <button
         onClick={() => setChatOpen((v) => !v)}
         aria-label="AI Concierge"
-        className="fixed bottom-6 right-24 z-40 grid h-14 w-14 place-items-center rounded-full bg-gradient-gold text-gold-foreground shadow-gold hover:scale-105 transition-transform"
+        className="fixed bottom-6 right-20 z-40 grid h-12 w-12 place-items-center rounded-full border border-border bg-card text-gold hover:border-gold/60 transition-colors"
       >
-        {chatOpen ? <X size={22} /> : <Sparkles size={22} />}
+        {chatOpen ? <X size={18} /> : <Sparkles size={18} />}
       </button>
 
       {chatOpen && (
