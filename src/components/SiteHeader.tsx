@@ -26,21 +26,21 @@ export function SiteHeader() {
 
   return (
     <header
-      className={`fixed inset-x-0 top-0 z-50 transition-all duration-500 ${
+      className={`fixed inset-x-0 top-0 z-50 transition-colors duration-300 ${
         scrolled
-          ? "bg-background/85 backdrop-blur-xl border-b border-border"
+          ? "bg-background/80 backdrop-blur-xl border-b border-border"
           : "bg-transparent"
       }`}
     >
       <div className="mx-auto flex h-20 max-w-7xl items-center justify-between px-5 md:px-8">
         <Logo />
-        <nav className="hidden md:flex items-center gap-9">
+        <nav className="hidden md:flex items-center gap-8">
           {NAV.map((item) => (
             <Link
               key={item.to}
               to={item.to}
-              className="text-[0.78rem] uppercase tracking-[0.2em] text-muted-foreground hover:text-gold transition-colors"
-              activeProps={{ className: "text-gold" }}
+              className="text-sm text-muted-foreground hover:text-cream transition-colors"
+              activeProps={{ className: "text-cream" }}
               activeOptions={{ exact: item.to === "/" }}
             >
               {item.label}
@@ -49,7 +49,7 @@ export function SiteHeader() {
         </nav>
         <div className="flex items-center gap-3">
           <Button asChild variant="gold" size="sm" className="hidden sm:inline-flex">
-            <Link to="/booking">Book Session</Link>
+            <Link to="/booking">Book</Link>
           </Button>
           <button
             className="md:hidden text-foreground p-2"
