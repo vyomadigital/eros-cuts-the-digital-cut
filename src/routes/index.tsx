@@ -162,22 +162,13 @@ function ExperienceSplit() {
     <section className="py-24 md:py-32 px-6 md:px-8 bg-onyx/40">
       <div className="mx-auto max-w-7xl grid gap-12 md:grid-cols-2 items-center">
         <div className="relative">
-          <div className="absolute -inset-4 bg-radial-gold opacity-40 blur-2xl" />
           <img
             src={interior}
             alt="EROS CUTS interior"
             loading="lazy"
             width={1600}
             height={1024}
-            className="relative rounded-2xl shadow-luxury"
-          />
-          <img
-            src={tools}
-            alt="Barber tools"
-            loading="lazy"
-            width={1280}
-            height={1280}
-            className="absolute -bottom-10 -right-6 hidden md:block w-44 h-44 object-cover rounded-xl border border-gold/30 shadow-gold"
+            className="rounded-xl border border-border w-full"
           />
         </div>
         <div>
