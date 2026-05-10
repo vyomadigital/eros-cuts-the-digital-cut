@@ -229,8 +229,7 @@ function Gallery() {
                 src={g.src}
                 alt={g.alt}
                 loading="lazy"
-                className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
-              />
+                className="absolute inset-0 h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.03]"
               <div className="absolute inset-0 bg-gradient-to-t from-onyx via-onyx/30 to-transparent opacity-90" />
               <div className="absolute bottom-4 left-4 right-4 flex items-end justify-between">
                 <div>
