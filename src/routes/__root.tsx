@@ -10,6 +10,8 @@ import {
 } from "@tanstack/react-router";
 import { useEffect } from "react";
 import { Toaster } from "@/components/ui/sonner";
+import { RouteProgress } from "@/components/RouteProgress";
+import { Onboarding } from "@/components/Onboarding";
 
 import appCss from "../styles.css?url";
 
@@ -131,7 +133,9 @@ function RootComponent() {
 
   return (
     <QueryClientProvider client={queryClient}>
+      <RouteProgress />
       <RouteTransition />
+      <Onboarding />
       <Toaster position="top-center" theme="dark" />
     </QueryClientProvider>
   );
