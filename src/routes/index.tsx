@@ -171,7 +171,6 @@ function Services() {
                   </div>
                   <Link
                     to="/booking"
-                    search={{ service: s.id } as never}
                     className="mt-2 inline-flex items-center gap-1 text-xs text-gold uppercase tracking-[0.2em] hover:gap-2 transition-all"
                   >
                     Book <ArrowRight size={12} />
