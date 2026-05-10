@@ -294,7 +294,16 @@ function Step({ title, subtitle, children }: { title: string; subtitle?: string;
   );
 }
 
-function Input({ label, value, onChange, type = "text", placeholder, icon }: any) {
+function Input({
+  label, value, onChange, type = "text", placeholder, icon,
+}: {
+  label: string;
+  value: string;
+  onChange: (v: string) => void;
+  type?: string;
+  placeholder?: string;
+  icon?: React.ReactNode;
+}) {
   return (
     <div>
       <label className="text-xs uppercase tracking-[0.25em] text-muted-foreground flex items-center gap-2">
