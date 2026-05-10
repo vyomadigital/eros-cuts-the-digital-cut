@@ -79,9 +79,13 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { name: "description", content: "Kathmandu's premier grooming studio. Master barbers, cinematic interiors, and a craft built around your face. 4.9★ from 662 reviews." },
       { name: "author", content: "EROS CUTS" },
       { property: "og:title", content: "EROS CUTS — Premium Barbershop in Kathmandu" },
-      { property: "og:description", content: "Master barbers. Editorial atmosphere. 4.9★ from 662 reviews." },
+      { property: "og:description", content: "Kathmandu's premier grooming studio. Master barbers, cinematic interiors, and a craft built around your face. 4.9★ from 662 reviews." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:title", content: "EROS CUTS — Premium Barbershop in Kathmandu" },
+      { name: "twitter:description", content: "Kathmandu's premier grooming studio. Master barbers, cinematic interiors, and a craft built around your face. 4.9★ from 662 reviews." },
+      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/237babe0-c3f7-4f05-a03e-ff0ba40a30c6/id-preview-103f57f9--72f668ff-3c41-4ace-8e6c-9a06ccacb144.lovable.app-1778390305901.png" },
+      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/237babe0-c3f7-4f05-a03e-ff0ba40a30c6/id-preview-103f57f9--72f668ff-3c41-4ace-8e6c-9a06ccacb144.lovable.app-1778390305901.png" },
     ],
     links: [
       {
